@@ -95,6 +95,30 @@ document.addEventListener('DOMContentLoaded', function() {
     
     // Form submission handling
     const contactForm = document.querySelector('.contact-form');
+// if (contactForm) {
+//     contactForm.addEventListener('submit', function(e) {
+//         e.preventDefault();
+        
+//         // Get the form values
+//         const name = document.getElementById('name').value;
+//         const email = document.getElementById('email').value;
+//         const subject = document.getElementById('subject').value || 'No Subject'; // Default value if empty
+//         const message = document.getElementById('message').value;
+
+//         // Create the mailto link
+//         const mailtoLink = `mailto:your-venojanshanmugarajah@gmail.com?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(`Name: ${name}\nEmail: ${email}\nMessage: ${message}`)}`;
+
+//         // Open the user's email client with pre-filled data
+//         window.location.href = mailtoLink;
+
+//         // Optionally, you can display a success message to the user
+//         alert('Thank you for your message! I will get back to you soon.');
+        
+//         // Reset the form
+//         contactForm.reset();
+//     });
+// }
+
 if (contactForm) {
     contactForm.addEventListener('submit', function(e) {
         e.preventDefault();
@@ -105,17 +129,21 @@ if (contactForm) {
         const subject = document.getElementById('subject').value || 'No Subject'; // Default value if empty
         const message = document.getElementById('message').value;
 
+        // Replace with your actual email address
+        const recipientEmail = "venojanshanmugarajah@gmail.com"; 
+
         // Create the mailto link
-        const mailtoLink = `mailto:your-venojanshanmugarajah@gmail.com?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(`Name: ${name}\nEmail: ${email}\nMessage: ${message}`)}`;
+        const mailtoLink = `mailto:${recipientEmail}?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(`Name: ${name}\nEmail: ${email}\nMessage: ${message}`)}`;
 
         // Open the user's email client with pre-filled data
         window.location.href = mailtoLink;
 
-        // Optionally, you can display a success message to the user
+        // Optionally, display a success message
         alert('Thank you for your message! I will get back to you soon.');
         
         // Reset the form
         contactForm.reset();
     });
 }
+
 });
