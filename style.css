@@ -559,10 +559,6 @@ section {
     color: var(--primary-color);
 }
 
-.email-link {
-    text-decoration: none;
-    color: inherit;
-}
 
 .contact-form {
     flex: 1;
