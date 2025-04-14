@@ -146,4 +146,25 @@ if (contactForm) {
     });
 }
 
+// Typing animation for header
+const typingElement = document.querySelector('.subtitle');
+if (typingElement) {
+    const text = typingElement.textContent;
+    typingElement.textContent = '';
+    
+    let i = 0;
+    function typeWriter() {
+        if (i < text.length) {
+            typingElement.textContent += text.charAt(i);
+            i++;
+            setTimeout(typeWriter, 50);
+        }
+    }
+    
+    // Start typing animation after 1 seconds
+    setTimeout(typeWriter, 1000);
+}
+
+
+
 });
